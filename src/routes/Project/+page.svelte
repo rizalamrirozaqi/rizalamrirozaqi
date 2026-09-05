@@ -9,8 +9,10 @@
       year: '2026',
       title: 'Abstract Movement',
       category: 'Motion Graphics',
-      description:
-        'A small experiment with abstract shapes and movement. Made to explore timing, transitions, and how simple elements can work together.',
+      description: {
+        id: 'Eksperimen kecil dengan bentuk dan gerakan abstrak. Dibuat untuk mengeksplorasi timing, transisi, dan bagaimana elemen sederhana dapat bekerja sama.',
+        en: 'A small experiment with abstract shapes and movement. Made to explore timing, transitions, and how simple elements can work together.'
+      },
       video: '/videos/project-1.webm'
     },
     {
@@ -18,8 +20,10 @@
       year: '2026',
       title: 'Sample Link Archive Web Ad',
       category: 'UI Motion',
-      description:
-        'A small UI motion experiment exploring movement and visual presentation. Made while trying different ways to make interface elements feel more dynamic.',
+      description: {
+        id: 'Eksperimen kecil dengan UI motion untuk mengeksplorasi pergerakan dan penyajian visual. Dibuat sambil mencoba berbagai cara agar elemen antarmuka terasa lebih dinamis.',
+        en: 'A small UI motion experiment exploring movement and visual presentation. Made while trying different ways to make interface elements feel more dynamic.'
+      },
       video: '/videos/project-2.webm'
     },
     {
@@ -27,18 +31,22 @@
       year: '2025',
       title: 'Fallen Leaves Animation',
       category: '3D Animation',
-      description:
-        'A small 3D animation project featuring falling leaves in front of the 7th Amikom University building. Made as part of a 3D animation course while exploring scene creation and simple animation.',
+      description: {
+        id: 'Project animasi 3D sederhana yang menampilkan dedaunan jatuh di depan gedung Universitas Amikom ke-7. Dibuat sebagai bagian dari mata kuliah animasi 3D sambil mempelajari pembuatan scene dan animasi sederhana.',
+        en: 'A small 3D animation project featuring falling leaves in front of the 7th Amikom University building. Made as part of a 3D animation course while exploring scene creation and simple animation.'
+      },
       video: '/videos/project-3.webm'
     },
     {
       number: '04',
       year: '2025',
-      title: 'Project Four',
-      category: 'Motion Study',
-      description:
-        'Another experiment while learning motion.',
-      video: '/videos/project-04.webm'
+      title: 'Anime Motion Video',
+      category: 'Music Video',
+      description: {
+        id: 'Edit pendek Bocchi the Rock! di After Effects untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',
+        en: 'A short Bocchi the Rock! edit on After Effects to practice various motion design techniques, including masking, lighting, and 3D integration.'
+      },
+      video: '/videos/project-4.webm'
     }
   ];
 
@@ -112,8 +120,15 @@
     );
   };
 
+  // =====================================================
+  // GSAP
+  // =====================================================
+
   onMount(async () => {
-    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+    const { ScrollTrigger } = await import(
+      'gsap/ScrollTrigger'
+    );
+
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -425,6 +440,7 @@
 <main
   class="overflow-hidden text-[#172238] selection:bg-[#18A9E8] selection:text-[#F0F2F4]"
 >
+
   <!-- =======================================================
        01 — INTRO
   ======================================================== -->
@@ -513,6 +529,7 @@
     <div
       class="projects-track flex min-h-screen w-max items-center gap-12 px-6 py-24 md:gap-16 md:px-12"
     >
+
       <!-- INTRO -->
 
       <div
@@ -559,6 +576,7 @@
           class="project-card group flex w-[82vw] shrink-0 flex-col md:w-[44vw]"
           data-cursor-hover
         >
+
           <!-- VIDEO -->
 
           <div
@@ -639,6 +657,7 @@
             class="flex min-h-[170px] items-start justify-between gap-6 md:min-h-[185px]"
           >
             <div class="max-w-lg">
+
               <div
                 class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#18A9E8]"
               >
@@ -654,8 +673,9 @@
               <p
                 class="mt-3 max-w-md text-sm leading-relaxed text-[#EEF0F2]/45"
               >
-                {project.description}
+                {project.description[$language]}
               </p>
+
             </div>
 
             <span
@@ -664,6 +684,7 @@
               {project.number}
             </span>
           </div>
+
         </article>
       {/each}
 
@@ -687,6 +708,7 @@
           </span>
         </h2>
       </div>
+
     </div>
   </section>
 
@@ -709,7 +731,9 @@
       <div
         class="grid gap-16 md:grid-cols-[0.7fr_1.3fr]"
       >
+
         <div class="reveal">
+
           <div
             class="font-mono text-[9px] uppercase tracking-[0.15em] text-[#172238]/45"
           >
@@ -740,12 +764,15 @@
               and see where it leads.
             </p>
           {/if}
+
         </div>
 
         <div
           class="grid gap-10 md:grid-cols-3"
         >
+
           <div class="reveal">
+
             <span
               class="font-mono text-[9px] text-[#172238]/40"
             >
@@ -773,9 +800,11 @@
                 understand what I actually want to make.
               </p>
             {/if}
+
           </div>
 
           <div class="reveal">
+
             <span
               class="font-mono text-[9px] text-[#172238]/40"
             >
@@ -803,9 +832,11 @@
                 find an approach that feels right.
               </p>
             {/if}
+
           </div>
 
           <div class="reveal">
+
             <span
               class="font-mono text-[9px] text-[#172238]/40"
             >
@@ -823,8 +854,8 @@
                 class="mt-4 text-sm leading-relaxed text-[#172238]/55"
               >
                 Melihat kembali hasilnya, menerima
-                masukan, lalu belajar dari kesalahan yang
-                ada.
+                masukan, lalu belajar dari kesalahan
+                yang ada.
               </p>
             {:else}
               <p
@@ -835,7 +866,9 @@
                 wrong.
               </p>
             {/if}
+
           </div>
+
         </div>
       </div>
     </div>
@@ -857,6 +890,7 @@
     <div
       class="closing-content relative z-10 mx-auto w-full max-w-7xl"
     >
+
       <div
         class="font-mono text-[9px] uppercase tracking-[0.15em] text-[#172238]/40"
       >
@@ -864,6 +898,7 @@
       </div>
 
       <div class="mt-12">
+
         <h2
           class="font-serif text-[8vw] leading-[0.95] tracking-[-0.025em] md:text-[7vw]"
         >
@@ -875,6 +910,7 @@
         >
           EVEN BENEATH THE SNOW, PASSION BURNS.
         </p>
+
       </div>
 
       <div
@@ -886,6 +922,8 @@
 
         More to come
       </div>
+
     </div>
   </section>
+
 </main>

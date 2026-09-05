@@ -411,7 +411,7 @@
   >
     <header class="hero-meta flex items-center justify-between border-b border-[#172238]/15 pb-5 font-mono text-[9px] uppercase tracking-[0.18em] text-[#172238]/55">
       <span>RIZAL AMRI ROZAQI</span>
-      <span>Motion Graphics Designer</span>
+      <span>Creative Designer</span>
       <span class="hidden md:block">Indonesia</span>
     </header>
 
@@ -424,7 +424,7 @@
 
       <div class="flex flex-col justify-between gap-5 overflow-hidden md:flex-row md:items-end">
         <div class="overflow-hidden">
-          <h1 class="hero-line font-bebas text-[17vw] leading-[0.8] tracking-[-0.03em] text-transparent [-webkit-text-stroke:1px_#172238] md:text-[11vw]">
+          <h1 class="hero-line font-bebas text-[17vw] leading-[0.8] tracking-[-0.03em] text-[#172238]/45 md:text-[11vw]">
             AMRI ROZAQI
           </h1>
         </div>
@@ -440,7 +440,7 @@
     <div class="relative mt-10 flex justify-end">
       <div class="hero-visual relative aspect-[16/9] w-full overflow-hidden rounded-md bg-[#172238] shadow-[0_25px_70px_rgba(16,26,45,0.12)] md:w-[42vw]">
         <video
-          src="/videos/rizal.mp4"
+          src="/videos/project-1.webm"
           autoplay
           loop
           muted
@@ -793,7 +793,7 @@
 {#if $language === 'id'}
   <p>
     Di luar editing dan development, saya cukup suka ngulik PC hardware,
-    nonton anime, bermain game, dan sesekali mencoba hal-hal baru.
+    menonton anime, bermain game, dan mencoba hal-hal baru.
   </p>
 
   <p class="mt-6">

@@ -514,31 +514,14 @@
         </div>
 
         <div class="reveal max-w-xl text-base leading-relaxed text-[#172238]/55 md:text-lg">
-          {#if $language === 'id'}
-            <p>
-              Saat ini saya lebih tertarik pada project yang menarik,
-              kolaborasi yang menyenangkan, dan kesempatan untuk belajar
-              sesuatu yang baru.
-            </p>
+{#if $language === 'id'}
 
-            <p class="mt-6">
-              Tidak harus sesuatu yang besar. Selama ada ide yang menarik
-              dan proses yang bisa dinikmati, saya dengan senang hati
-              mempertimbangkannya.
-            </p>
-          {:else}
-            <p>
-              I'm currently more interested in interesting projects,
-              enjoyable collaborations, and opportunities to learn
-              something new.
-            </p>
-
-            <p class="mt-6">
-              It doesn't have to be something big. As long as there's
-              an interesting idea and a process worth enjoying,
-              I'd be happy to consider it.
-            </p>
-          {/if}
+<p> Saya tertarik untuk menjadi bagian dari lingkungan kerja yang menghadirkan karya-karya bermakna dan memberikan ruang untuk terus belajar serta berkembang. </p> 
+<p class="mt-6"> Saya berharap dapat membawa kemampuan dan perspektif yang saya miliki, sekaligus belajar dari orang-orang di dalamnya untuk menciptakan sesuatu yang berdampak bersama. </p> 
+{:else} 
+<p> I'm interested in being part of a working environment that creates meaningful work while giving me room to keep learning and growing. </p> 
+<p class="mt-6"> I hope to bring my skills and perspective while learning from the people around me and contributing to work that creates meaningful impact together. </p> 
+{/if}
         </div>
 
       </div>

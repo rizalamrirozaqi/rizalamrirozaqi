@@ -20,8 +20,8 @@ export default defineConfig({
 			})
 		}),
 		tailwindcss(),
-	]
-// 	  ssr: {
-//     noExternal: ['gsap']
-//   }
+	],
+	  ssr: {
+    noExternal: ['gsap']
+  }
 });

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
     import { language } from '$lib/stores/language';
 
   import ParticleMagnet from './ParticleMagnet.svelte';
@@ -9,9 +8,10 @@
   let footer: HTMLElement | undefined = $state();
   let email: HTMLAnchorElement | undefined = $state();
 
-  onMount(() => {
+  onMount(async () => {
     if (!footer) return;
 
+    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
   const shards = [
     'polygon(0% 0%, 28% 4%, 22% 28%, 0% 35%)',
@@ -63,8 +62,9 @@
     }
   };
 
-  onMount( () => {
+  onMount(async () => {
 
+    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {

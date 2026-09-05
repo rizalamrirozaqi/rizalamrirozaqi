@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
   import { language } from '$lib/stores/language';
 
   let emailLink: HTMLAnchorElement | undefined = $state();
@@ -21,8 +20,8 @@
     }
   ];
 
-  onMount( () => {
-
+  onMount(async () => {
+    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {

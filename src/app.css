@@ -1,0 +1,23 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss";
+
+@theme {
+    /* Menambahkan custom font yang menghasilkan class font-bebas, font-playfair, dll */
+    --font-bebas: "Bebas Neue", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-notojp: "Noto Sans JP", sans-serif;
+}
+body {
+    @apply bg-gray-950 text-gray-100;
+}
+
+@media (pointer: fine) {
+
+    html,
+    body,
+    body * {
+        cursor: none !important;
+    }
+}

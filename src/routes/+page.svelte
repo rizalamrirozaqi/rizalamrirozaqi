@@ -526,7 +526,7 @@
             class="h-full w-full"
           >
             <video
-              src="/videos/rizal.mp4"
+              src="/videos/rizal.webm"
               autoplay
               loop
               muted
@@ -657,7 +657,7 @@
     >
       <video
         bind:this={vidRef}
-        src="/videos/rizal.webm"
+        src="/videos/hero-mograph.webm"
         autoplay
         loop
         muted

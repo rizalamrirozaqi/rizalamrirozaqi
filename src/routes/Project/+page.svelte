@@ -40,7 +40,7 @@
     {
       number: '04',
       year: '2025',
-      title: 'Anime Motion Video',
+      title: 'Anime Music Video',
       category: 'Music Video',
       description: {
         id: 'Edit pendek Bocchi the Rock! di After Effects untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',

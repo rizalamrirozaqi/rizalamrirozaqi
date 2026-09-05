@@ -1,7 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
   import { language } from '$lib/stores/language';
 
   let customCursor: HTMLDivElement | undefined = $state();
@@ -80,7 +78,9 @@
     }
   }
 
-  onMount(() => {
+  onMount(async() => {
+    const { gsap } = await import('gsap');
+    const { ScrollTrigger } = (await import('gsap/dist/ScrollTrigger.js')).default;
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {

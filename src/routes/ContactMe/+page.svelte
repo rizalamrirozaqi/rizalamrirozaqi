@@ -547,7 +547,7 @@
         <span>Motion Graphics</span>
         <span>Video Editing</span>
         <span>Compositing</span>
-        <span>Front-End</span>
+        <span>Graphic Design</span>
       </div>
     </div>
   </section>

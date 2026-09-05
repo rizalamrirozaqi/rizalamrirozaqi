@@ -217,7 +217,7 @@
       <span>RIZAL AMRI ROZAQI</span>
 
       <span class="hidden md:block">
-        MOTION GRAPHICS / GRAPHIC DESIGN / VIDEO EDITOR 
+        MOTION GRAPHICS / VIDEO EDITING / COMPOSITING / GRAPHIC DESIGN
       </span>
 
       <span>END</span>

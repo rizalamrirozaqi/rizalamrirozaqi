@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
   import { language } from '$lib/stores/language';
 
   const projects = [
@@ -111,9 +113,8 @@
     );
   };
 
-  onMount(async () => {
-    const { gsap } = await import('gsap');
-    const { ScrollTrigger } = (await import('gsap/dist/ScrollTrigger.js')).default;
+  onMount( () => {
+  
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {

@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.css';
+  import { gsap } from 'gsap';
   import { onMount } from 'svelte';
 
   import Header from '$lib/components/Header.svelte';
@@ -10,8 +11,8 @@
   let cursor: HTMLDivElement | undefined = $state();
 
 
-  onMount(async () => {
-    const { gsap } = await import('gsap');
+  onMount( () => {
+
     if (!cursor) return;
 
     if (!window.matchMedia('(pointer: fine)').matches) {

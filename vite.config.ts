@@ -18,8 +18,8 @@ export default defineConfig({
 			adapter: adapter()
 		}),
 		tailwindcss(),
-	],
-	  ssr: {
-    noExternal: ['gsap']
-  }
+	]
+// 	  ssr: {
+//     noExternal: ['gsap']
+//   }
 });

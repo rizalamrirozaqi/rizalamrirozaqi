@@ -4,50 +4,65 @@
   import { language } from '$lib/stores/language';
 
   const projects = [
-    {
-      number: '01',
-      year: '2026',
-      title: 'Abstract Movement',
-      category: 'Motion Graphics',
-      description: {
-        id: 'Eksperimen kecil dengan bentuk dan gerakan abstrak. Dibuat untuk mengeksplorasi timing, transisi, dan bagaimana elemen sederhana dapat bekerja sama.',
-        en: 'A small experiment with abstract shapes and movement. Made to explore timing, transitions, and how simple elements can work together.'
-      },
-      video: '/videos/project-1.webm'
+  {
+    number: '01',
+    year: '2026',
+    title: 'Sample Music Platform Promo Concept',
+    category: 'Motion Graphics',
+    description: {
+      id: 'Eksperimen motion graphics untuk konsep promosi platform musik Spotify. Dibuat dengan pendekatan minimal dan berfokus pada bagaimana elemen UI, typography, dan transisi dapat membentuk ritme visual yang sederhana namun tetap menarik.',
+      en: 'A motion graphics experiment for a Spotify music platform promo concept. Built with a minimal approach, focusing on how UI elements, typography, and transitions can create a simple yet engaging visual rhythm.'
     },
-    {
-      number: '02',
-      year: '2026',
-      title: 'Sample Link Archive Web Ad',
-      category: 'UI Motion',
-      description: {
-        id: 'Eksperimen kecil dengan UI motion untuk mengeksplorasi pergerakan dan penyajian visual. Dibuat sambil mencoba berbagai cara agar elemen antarmuka terasa lebih dinamis.',
-        en: 'A small UI motion experiment exploring movement and visual presentation. Made while trying different ways to make interface elements feel more dynamic.'
-      },
-      video: '/videos/project-2.webm'
+    video: '/videos/project-1.webm'
+  },
+
+  {
+    number: '02',
+    year: '2026',
+    title: 'Abstract Movement',
+    category: 'Motion Graphics',
+    description: {
+      id: 'Eksperimen kecil dengan bentuk dan gerakan abstrak. Dibuat untuk mengeksplorasi timing, transisi, dan bagaimana elemen sederhana dapat bekerja sama.',
+      en: 'A small experiment with abstract shapes and movement. Made to explore timing, transitions, and how simple elements can work together.'
     },
-    {
-      number: '03',
-      year: '2025',
-      title: 'Fallen Leaves Animation',
-      category: '3D Animation',
-      description: {
-        id: 'Project animasi 3D sederhana yang menampilkan dedaunan jatuh di depan gedung Universitas Amikom ke-7. Dibuat sebagai bagian dari mata kuliah animasi 3D sambil mempelajari pembuatan scene dan animasi sederhana.',
-        en: 'A small 3D animation project featuring falling leaves in front of the 7th Amikom University building. Made as part of a 3D animation course while exploring scene creation and simple animation.'
-      },
-      video: '/videos/project-3.webm'
+    video: '/videos/project-2.webm'
+  },
+
+  {
+    number: '03',
+    year: '2026',
+    title: 'Sample Link Archive Web Ad Concept',
+    category: 'UI Motion',
+    description: {
+      id: 'Eksperimen motion untuk konsep iklan web Link Archive. Dibuat untuk mencoba bagaimana elemen antarmuka dan transisi dapat membuat presentasi sebuah produk terasa lebih hidup.',
+      en: 'A motion experiment for a Link Archive web ad concept. Made to explore how interface elements and transitions can make a product presentation feel more dynamic.'
     },
-    {
-      number: '04',
-      year: '2025',
-      title: 'Anime Music Video',
-      category: 'Music Video',
-      description: {
-        id: 'Edit pendek Bocchi the Rock! di After Effects untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',
-        en: 'A short Bocchi the Rock! edit on After Effects to practice various motion design techniques, including masking, lighting, and 3D integration.'
-      },
-      video: '/videos/project-4.webm'
-    }
+    video: '/videos/project-3.webm'
+  },
+
+  {
+    number: '04',
+    year: '2025',
+    title: 'Fallen Leaves Animation',
+    category: '3D Animation',
+    description: {
+      id: 'Project animasi 3D sederhana yang menampilkan dedaunan jatuh di depan gedung Universitas Amikom Yogyakarta. Dibuat sebagai bagian dari mata kuliah animasi 3D sambil mempelajari pembuatan scene dan animasi sederhana.',
+      en: 'A small 3D animation project featuring falling leaves in front of the Universitas Amikom Yogyakarta building. Made as part of a 3D animation course while exploring scene creation and simple animation.'
+    },
+    video: '/videos/project-4.webm'
+  },
+
+  {
+    number: '05',
+    year: '2025',
+    title: 'Anime Music Video',
+    category: 'Music Video',
+    description: {
+      id: 'Edit pendek Bocchi the Rock! menggunakan After Effects untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',
+      en: 'A short Bocchi the Rock! edit made in After Effects to practice various motion design techniques, including masking, lighting, and 3D integration.'
+    },
+    video: '/videos/project-5.webm'
+  }
   ];
 
   // =====================================================

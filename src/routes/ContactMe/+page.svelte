@@ -11,6 +11,14 @@
       href: 'https://www.instagram.com/rizalamri.rar/'
     },
     {
+      name: 'Youtube',
+      href: 'https://www.youtube.com/@remka7721'
+    },
+    {
+      name: 'Tiktok',
+      href: 'https://www.tiktok.com/@rushia_remka'
+    },
+    {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/in/rizal-amri-rozaqi/'
     },

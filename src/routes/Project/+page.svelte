@@ -10,9 +10,8 @@
     title: 'Music Platform Hook',
     category: 'Motion Graphics',
     description: {
-      id: 'Eksperimen motion graphics untuk konsep promosi platform musik Spotify. Dibuat dengan pendekatan minimal dan berfokus pada bagaimana elemen UI, typography, dan transisi dapat membentuk ritme visual yang sederhana namun tetap menarik.',
-      en: 'A motion graphics experiment for a Spotify music platform promo concept. Built with a minimal approach, focusing on how UI elements, typography, and transitions can create a simple yet engaging visual rhythm.'
-    },
+      id: 'Eksperimen motion graphics minimal untuk konsep promosi Spotify, dengan eksplorasi UI, typography, dan transisi.'
+      en: 'A minimal motion graphics experiment for a Spotify promo concept, exploring UI, typography, and transitions.'    },
     video: '/videos/project-1.webm'
   },
 

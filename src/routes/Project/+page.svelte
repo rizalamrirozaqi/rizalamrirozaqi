@@ -7,7 +7,7 @@
   {
     number: '01',
     year: '2026',
-    title: 'Sample Spotify Ad Concept',
+    title: 'Music Platform Hook',
     category: 'Motion Graphics',
     description: {
       id: 'Eksperimen motion graphics untuk konsep promosi platform musik Spotify. Dibuat dengan pendekatan minimal dan berfokus pada bagaimana elemen UI, typography, dan transisi dapat membentuk ritme visual yang sederhana namun tetap menarik.',

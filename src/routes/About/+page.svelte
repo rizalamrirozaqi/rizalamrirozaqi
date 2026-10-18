@@ -11,17 +11,17 @@
     {
       name: 'AFTER EFFECTS',
       cat: 'MOTION GRAPHICS | COMPOSITING | VFX',
-      img: '/images/placeholder-1.jpg'
+      img: '/images/preview-aftereffects.webp'
     },
     {
       name: 'PHOTOSHOP',
       cat: 'DESIGN | PHOTO EDITING | MASKING',
-      img: '/images/placeholder-2.jpg'
+      img: '/images/preview-photoshop.webp'
     },
     {
       name: 'FIGMA',
       cat: 'UI / UX',
-      img: '/images/placeholder-3.jpg'
+      img: '/images/preview-figma.webp'
     },
     {
       name: 'BLENDER',
@@ -31,7 +31,7 @@
     {
       name: 'CANVA',
       cat: 'DESIGN | PRESENTATION',
-      img: '/images/placeholder-4.jpg'
+      img: '/images/preview-canva.webp'
     }
   ];
 

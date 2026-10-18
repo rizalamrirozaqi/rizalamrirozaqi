@@ -7,11 +7,12 @@
   {
     number: '01',
     year: '2026',
-    title: 'Music Platform Hook',
+    title: 'Music Platform Ad',
     category: 'Motion Graphics',
     description: {
-      id: 'Eksperimen motion graphics minimal untuk konsep promosi Spotify, dengan eksplorasi UI, typography, dan transisi.'
-      en: 'A minimal motion graphics experiment for a Spotify promo concept, exploring UI, typography, and transitions.'    },
+      id: 'Eksperimen motion graphics minimal untuk konsep promosi Spotify, dengan eksplorasi UI, typography, dan transisi.',
+      en: 'A minimal motion graphics experiment for a Spotify promo concept, exploring UI, typography, and transitions.'    
+    },
     video: '/videos/project-1.webm'
   },
 
@@ -30,7 +31,7 @@
   {
     number: '03',
     year: '2026',
-    title: 'Sample Link Archive Web Ad Concept',
+    title: 'Link Archive Ad',
     category: 'UI Motion',
     description: {
       id: 'Eksperimen motion untuk konsep iklan web Link Archive. Dibuat untuk mencoba bagaimana elemen antarmuka dan transisi dapat membuat presentasi sebuah produk terasa lebih hidup.',

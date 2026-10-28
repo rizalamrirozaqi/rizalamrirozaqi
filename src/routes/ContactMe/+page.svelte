@@ -314,7 +314,7 @@
 </script>
 
 <svelte:head>
-  <title>Contact — Rizal Amri Rozaqi</title>
+  <title>Contact</title>
 
   <meta
     name="description"

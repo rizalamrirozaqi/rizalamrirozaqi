@@ -360,7 +360,7 @@
 </script>
 
 <svelte:head>
-  <title>About — Rizal Amri Rozaqi</title>
+  <title>About</title>
   <meta
     name="description"
     content="Rizal Amri Rozaqi — Motion Graphics Designer with a background in front-end development."

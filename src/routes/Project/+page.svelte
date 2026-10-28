@@ -3,66 +3,261 @@
   import { gsap } from 'gsap';
   import { language } from '$lib/stores/language';
 
+  // =====================================================
+  // PROJECT DATA
+  //
+  // highlighted: true  = tampil di Selected Work dan All Projects
+  // highlighted: false = hanya tampil di All Projects
+  //
+  // Group yang tersedia:
+  // 'Video Editing'
+  // 'Motion Graphics'
+  // '3D'
+  // =====================================================
+
   const projects = [
-  {
-    number: '01',
-    year: '2026',
-    title: 'Music Platform Ad',
-    category: 'Motion Graphics',
-    description: {
-      id: 'Eksperimen motion graphics minimal untuk konsep promosi Spotify, dengan eksplorasi UI, typography, dan transisi.',
-      en: 'A minimal motion graphics experiment for a Spotify promo concept, exploring UI, typography, and transitions.'    
+    {
+      number: '01',
+      year: '2026',
+      title: 'Music Platform Ad',
+      category: 'Motion Graphics',
+      group: 'Motion Graphics',
+      highlighted: true,
+      description: {
+        id: 'Eksperimen motion graphics minimalist untuk konsep promosi Spotify, dengan eksplorasi UI, typography, dan transisi.',
+        en: 'A minimalist motion graphics experiment for a Spotify promo concept, exploring UI, typography, and transitions.'
+      },
+      video: '/videos/spotify.webm'
     },
-    video: '/videos/project-1.webm'
-  },
+    {
+      number: '02',
+      year: '2026',
+      title: 'Abstract Movement',
+      category: 'Motion Graphics',
+      group: 'Motion Graphics',
+      highlighted: true,
+      description: {
+        id: 'Eksperimen kecil dengan bentuk dan gerakan abstrak. Dibuat untuk mengeksplorasi timing, transisi, dan bagaimana elemen sederhana dapat bekerja sama.',
+        en: 'A small experiment with abstract shapes and movement. Made to explore timing, transitions, and how simple elements can work together.'
+      },
+      video: '/videos/abstract-movement-1.webm'
+    },
+    {
+      number: '03',
+      year: '2026',
+      title: 'Link Archive Ad',
+      category: 'UI Motion',
+      group: 'Motion Graphics',
+      highlighted: true,
+      description: {
+        id: 'Eksperimen motion untuk konsep iklan web Link Archive. Dibuat untuk mencoba bagaimana elemen antarmuka dan transisi dapat membuat presentasi sebuah produk terasa lebih hidup.',
+        en: 'A motion experiment for a Link Archive web ad concept. Made to explore how interface elements and transitions can make a product presentation feel more dynamic.'
+      },
+      video: '/videos/ungumark.webm'
+    },
+    {
+      number: '04',
+      year: '2025',
+      title: 'Fallen Leaves Animation',
+      category: '3D Animation',
+      group: '3D',
+      highlighted: true,
+      description: {
+        id: 'Project animasi 3D sederhana yang menampilkan dedaunan jatuh di depan gedung Universitas Amikom Yogyakarta. Dibuat sebagai bagian dari mata kuliah animasi 3D sambil mempelajari pembuatan scene dan animasi sederhana.',
+        en: 'A small 3D animation project featuring falling leaves in front of the Universitas Amikom Yogyakarta building. Made as part of a 3D animation course while exploring scene creation and simple animation.'
+      },
+      video: '/videos/amikom-3d.webm'
+    },
+    {
+      number: '05',
+      year: '2025',
+      title: 'Bocchi The Rock',
+      category: 'Music Video',
+      group: 'Video Editing',
+      highlighted: true,
+      description: {
+        id: 'Edit pendek Bocchi the Rock! menggunakan After Effects untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',
+        en: 'A short Bocchi the Rock! edit made in After Effects to practice various motion design techniques, including masking, lighting, and 3D integration.'
+      },
+      video: '/videos/bocchi-the-rock.webm'
+    },
 
-  {
-    number: '02',
-    year: '2026',
-    title: 'Abstract Movement',
-    category: 'Motion Graphics',
-    description: {
-      id: 'Eksperimen kecil dengan bentuk dan gerakan abstrak. Dibuat untuk mengeksplorasi timing, transisi, dan bagaimana elemen sederhana dapat bekerja sama.',
-      en: 'A small experiment with abstract shapes and movement. Made to explore timing, transitions, and how simple elements can work together.'
-    },
-    video: '/videos/project-2.webm'
-  },
+    // =====================================================
+    // TEMPLATE PROJECT BIASA
+    //
+    // Hapus komentar /* dan */ pada object di bawah ini
+    // jika ingin menambahkan project baru.
+    //
+    // Project dengan highlighted: false hanya muncul
+    // di All Projects, sesuai dengan group-nya.
+    // =====================================================
 
-  {
-    number: '03',
-    year: '2026',
-    title: 'Link Archive Ad',
-    category: 'UI Motion',
-    description: {
-      id: 'Eksperimen motion untuk konsep iklan web Link Archive. Dibuat untuk mencoba bagaimana elemen antarmuka dan transisi dapat membuat presentasi sebuah produk terasa lebih hidup.',
-      en: 'A motion experiment for a Link Archive web ad concept. Made to explore how interface elements and transitions can make a product presentation feel more dynamic.'
+  
+    {
+      year: '2026',
+      title: 'Natsu e No Tunnel',
+      category: 'Music Video',
+      group: 'Video Editing',
+      highlighted: false,
+      description: {
+        id: 'Edit pendek Natsu e No Tunnel! menggunakan After Effects dan Blender untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',
+        en: 'A short Natsu e No Tunnel edit made in After Effects and Blender to practice various motion design techniques, including masking, lighting, and 3D integration.'
+      },
+      video: '/videos/natsu-e-no-tunnel.webm'
     },
-    video: '/videos/project-3.webm'
-  },
+    {
+      year: '2026',
+      title: 'Komads',
+      category: 'Promo Video',
+      group: 'Motion Graphics',
+      highlighted: false,
+      description: {
+        id: 'Eksperimen motion graphics minimalist untuk konsep promosi Komads, dengan eksplorasi UI, typography, dan transisi.',
+        en: 'A minimalist motion graphics experiment for a Komads promo concept, exploring UI, typography, and transitions.'
+      },
+      video: '/videos/komads.webm'
+    },
+    {
+      year: '2026',
+      title: 'Nodewave',
+      category: 'Promo Video',
+      group: 'Motion Graphics',
+      highlighted: false,
+      description: {
+        id: 'Eksperimen motion graphics minimalist untuk konsep promosi Nodewave, dengan eksplorasi UI, typography, dan transisi.',
+        en: 'A minimalist motion graphics experiment for a Nodewave promo concept, exploring UI, typography, and transitions.'
+      },
+      video: '/videos/nodewave.webm'
+    },
+  
+  ];
 
-  {
-    number: '04',
-    year: '2025',
-    title: 'Fallen Leaves Animation',
-    category: '3D Animation',
-    description: {
-      id: 'Project animasi 3D sederhana yang menampilkan dedaunan jatuh di depan gedung Universitas Amikom Yogyakarta. Dibuat sebagai bagian dari mata kuliah animasi 3D sambil mempelajari pembuatan scene dan animasi sederhana.',
-      en: 'A small 3D animation project featuring falling leaves in front of the Universitas Amikom Yogyakarta building. Made as part of a 3D animation course while exploring scene creation and simple animation.'
-    },
-    video: '/videos/project-4.webm'
-  },
+  // =====================================================
+  // SELECTED WORK
+  // Hanya project dengan highlighted: true
+  // =====================================================
 
-  {
-    number: '05',
-    year: '2025',
-    title: 'Anime Music Video',
-    category: 'Music Video',
-    description: {
-      id: 'Edit pendek Bocchi the Rock! menggunakan After Effects untuk berlatih berbagai teknik motion design, termasuk masking, lighting, dan integrasi 3D.',
-      en: 'A short Bocchi the Rock! edit made in After Effects to practice various motion design techniques, including masking, lighting, and 3D integration.'
+  const highlightedProjects = projects.filter(
+    (project) => project.highlighted
+  );
+
+  // =====================================================
+  // ALL PROJECTS — CATEGORY FILTERS
+  //
+  // Semua project otomatis masuk kategori yang sesuai.
+  // Flag highlighted tidak membatasi arsip kategori.
+  // =====================================================
+
+  const videoEditingProjects = projects.filter(
+    (project) => project.group === 'Video Editing'
+  );
+
+  const motionProjects = projects.filter(
+    (project) => project.group === 'Motion Graphics'
+  );
+
+  const threeDProjects = projects.filter(
+    (project) => project.group === '3D'
+  );
+
+  // =====================================================
+  // GRAPHIC DESIGN PROJECTS
+  //
+  // Setiap object merupakan satu project.
+  // Setiap project bisa berisi beberapa gambar.
+  //
+  // Simpan gambar di folder:
+  // static/images/...
+  //
+  // Contoh src:
+  // /images/kimi-no-mobil-carousel/Artboard-1.webp
+  // =====================================================
+
+  const graphicDesignProjects = [
+    {
+      number: '01',
+      title: 'Kimi No Mobil',
+      category: 'Carousel Design',
+      year: '2026',
+      description: {
+        id: 'Konsep kampanye visual otomotif yang menggabungkan visual kendaraan, lanskap urban, dan tipografi untuk membangun nuansa perjalanan dan kebebasan. Dirancang dalam rangkaian beberapa slide dengan palet warna biru yang konsisten untuk menjaga kesatuan visual dan alur cerita.',
+        en: 'An automotive visual campaign concept combining vehicle imagery, urban landscapes, and typography to evoke a sense of journey and freedom. Designed as a multi-slide series with a consistent blue color palette to maintain visual cohesion and storytelling.'
+      },
+      images: [
+        {
+          src: '/images/kimi-no-mobil-carousel/Artboard-1.webp',
+          alt: 'Campaign Key Visual'
+        },
+        {
+          src: '/images/kimi-no-mobil-carousel/Artboard-2.webp',
+          alt: 'Campaign Storytelling'
+        },
+        {
+          src: '/images/kimi-no-mobil-carousel/Artboard-3.webp',
+          alt: 'Hero Visual'
+        }
+      ]
     },
-    video: '/videos/project-5.webm'
-  }
+    {
+      number: '02',
+      title: 'Social Media Campaign',
+      category: 'Campaign Design',
+      year: '2026',
+      description: {
+        id: 'Rangkaian desain kampanye media sosial yang membahas tantangan seller marketplace, mulai dari perubahan perilaku pembeli hingga penyesuaian strategi penjualan. Menggunakan kombinasi tipografi tegas, kontras hitam-putih, aksen oranye dan hijau, serta visual informatif untuk menyampaikan edukasi secara ringkas dan menarik.',
+        en: 'A social media campaign exploring the challenges faced by marketplace sellers, from shifting consumer behavior to adapting sales strategies. Bold typography, high-contrast black-and-white layouts, orange and green accents, and informative visuals communicate practical insights in a concise and engaging format.'
+      },
+      images: [
+        {
+          src: '/images/finance-carousel/Artboard-1.webp',
+          alt: 'The Opening Hook'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-2.webp',
+          alt: 'The Market Shift'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-3.webp',
+          alt: 'The Seller Impact'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-4.webp',
+          alt: 'Platform Diversification'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-5.webp',
+          alt: 'Pricing & Margin Review'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-6.webp',
+          alt: 'Building Direct Channels'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-7.webp',
+          alt: 'Seller Center Migration'
+        },
+        {
+          src: '/images/finance-carousel/Artboard-8.webp',
+          alt: 'Call to Action'
+        }
+      ]
+    },
+    {
+      number: '03',
+      title: 'Komads Campaign',
+      category: 'Campaign Design',
+      year: '2026',
+      description: {
+        id: 'Rangkaian desain kampanye media sosial yang membahas tantangan seller marketplace, mulai dari perubahan perilaku pembeli hingga penyesuaian strategi penjualan. Menggunakan kombinasi tipografi tegas, kontras hitam-putih, aksen oranye dan hijau, serta visual informatif untuk menyampaikan edukasi secara ringkas dan menarik.',
+        en: 'A social media campaign exploring the challenges faced by marketplace sellers, from shifting consumer behavior to adapting sales strategies. Bold typography, high-contrast black-and-white layouts, orange and green accents, and informative visuals communicate practical insights in a concise and engaging format.'
+      },
+      images: [
+        {
+          src: '/images/komads.webp',
+          alt: 'Komads Campaign Visual'
+        }
+      ]
+    }
   ];
 
   // =====================================================
@@ -70,19 +265,13 @@
   // =====================================================
 
   let activeAudioVideo: HTMLVideoElement | null = null;
-
-  // Menentukan apakah user sudah pernah menyalakan audio
   let hasInteractedWithAudio = false;
 
   const updateVideoAudio = (
-    container: HTMLDivElement,
     video: HTMLVideoElement
   ) => {
     if (video.muted) {
-      // =================================================
-      // MUTE VIDEO LAIN
-      // =================================================
-
+      // Mute video lain jika ada.
       if (
         activeAudioVideo &&
         activeAudioVideo !== video
@@ -90,28 +279,18 @@
         activeAudioVideo.muted = true;
       }
 
-      // =================================================
-      // UNMUTE VIDEO INI
-      // =================================================
-
+      // Nyalakan audio video yang sedang dipilih.
       video.muted = false;
       activeAudioVideo = video;
-
-      // User sudah tahu cara menyalakan audio
       hasInteractedWithAudio = true;
 
       return;
     }
 
-    // =================================================
-    // MUTE VIDEO INI
-    // =================================================
-
+    // Klik lagi untuk mematikan audio.
     video.muted = true;
 
-    if (
-      activeAudioVideo === video
-    ) {
+    if (activeAudioVideo === video) {
       activeAudioVideo = null;
     }
   };
@@ -122,233 +301,310 @@
     const container =
       event.currentTarget as HTMLDivElement;
 
-    const video =
-      container.querySelector(
-        '.project-video'
-      ) as HTMLVideoElement | null;
+    // Cari video di dalam kartu, baik Selected Work maupun All Projects.
+    const video = container.querySelector(
+      'video'
+    ) as HTMLVideoElement | null;
 
     if (!video) return;
 
-    updateVideoAudio(
-      container,
-      video
-    );
+    updateVideoAudio(video);
   };
 
   // =====================================================
-  // GSAP
+  // GSAP ANIMATIONS
   // =====================================================
 
-  onMount(async () => {
-    const { ScrollTrigger } = await import(
-      'gsap/ScrollTrigger'
-    );
+  onMount(() => {
+    let cleanup: (() => void) | undefined;
+    let cancelled = false;
 
-    gsap.registerPlugin(ScrollTrigger);
+    import('gsap/ScrollTrigger')
+      .then(({ ScrollTrigger }) => {
+        if (cancelled) return;
 
-    const ctx = gsap.context(() => {
-      // =====================================================
-      // INTRO
-      // =====================================================
+        gsap.registerPlugin(ScrollTrigger);
 
-      const introTl = gsap.timeline({
-        defaults: {
-          ease: 'power4.out'
-        }
-      });
+        const projectMedia = gsap.matchMedia();
+        const refresh = () => ScrollTrigger.refresh();
 
-      introTl
-        .fromTo(
-          '.intro-meta',
-          {
-            opacity: 0,
-            y: 20
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7
-          }
-        )
-        .fromTo(
-          '.intro-title',
-          {
-            yPercent: 110
-          },
-          {
-            yPercent: 0,
-            duration: 1,
-            stagger: 0.08
-          },
-          '-=0.4'
-        )
-        .fromTo(
-          '.intro-copy',
-          {
-            opacity: 0,
-            y: 20
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7
-          },
-          '-=0.45'
-        );
+        const refreshTimeouts: ReturnType<
+          typeof setTimeout
+        >[] = [];
 
-      // =====================================================
-      // INTRO PARALLAX
-      // =====================================================
+        const ctx = gsap.context(() => {
+          // =====================================================
+          // INTRO ANIMATION
+          // =====================================================
 
-      gsap.to('.intro-word', {
-        xPercent: -8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.intro-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1
-        }
-      });
+          const introTl = gsap.timeline({
+            defaults: {
+              ease: 'power4.out'
+            }
+          });
 
-      // =====================================================
-      // HORIZONTAL PROJECTS
-      // =====================================================
-
-      const section = document.querySelector(
-        '.projects-section'
-      ) as HTMLElement | null;
-
-      const track = document.querySelector(
-        '.projects-track'
-      ) as HTMLElement | null;
-
-      if (section && track) {
-        const getDistance = () =>
-          Math.max(
-            track.scrollWidth -
-              window.innerWidth,
-            0
-          );
-
-        gsap.to(track, {
-          x: () => -getDistance(),
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top top',
-            end: () => `+=${getDistance()}`,
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true
-          }
-        });
-      }
-
-      // =====================================================
-      // PROJECT CARD REVEAL
-      // =====================================================
-
-      gsap.utils
-        .toArray<HTMLElement>('.project-card')
-        .forEach((card, index) => {
-          gsap.fromTo(
-            card,
-            {
-              opacity: 0,
-              y: 35
-            },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.75,
-              delay: index * 0.05,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 90%',
-                once: true
+          introTl
+            .fromTo(
+              '.intro-meta',
+              {
+                opacity: 0,
+                y: 20
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.7
               }
+            )
+            .fromTo(
+              '.intro-title',
+              {
+                yPercent: 110
+              },
+              {
+                yPercent: 0,
+                duration: 1,
+                stagger: 0.08
+              },
+              '-=0.4'
+            )
+            .fromTo(
+              '.intro-copy',
+              {
+                opacity: 0,
+                y: 20
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.7
+              },
+              '-=0.45'
+            );
+
+          // =====================================================
+          // INTRO PARALLAX
+          // =====================================================
+
+          gsap.to('.intro-word', {
+            xPercent: -8,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '.intro-section',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 1
+            }
+          });
+
+          // =====================================================
+          // HORIZONTAL PROJECTS — DESKTOP ONLY
+          //
+          // Desktop: horizontal scroll dengan pinning.
+          // Mobile: list vertikal, tanpa horizontal pinning.
+          // =====================================================
+
+          projectMedia.add(
+            '(min-width: 768px)',
+            () => {
+              const section = document.querySelector(
+                '.projects-section'
+              ) as HTMLElement | null;
+
+              const track = document.querySelector(
+                '.projects-track'
+              ) as HTMLElement | null;
+
+              if (!section || !track) return;
+
+              const getDistance = () =>
+                Math.max(
+                  track.scrollWidth -
+                    window.innerWidth,
+                  0
+                );
+
+              const horizontalTween = gsap.to(
+                track,
+                {
+                  x: () => -getDistance(),
+                  ease: 'none',
+                  scrollTrigger: {
+                    trigger: section,
+                    start: 'top top',
+                    end: () => `+=${getDistance()}`,
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true
+                  }
+                }
+              );
+
+              return () => {
+                horizontalTween.scrollTrigger?.kill();
+                horizontalTween.kill();
+
+                gsap.set(track, {
+                  clearProps: 'transform'
+                });
+              };
             }
           );
-        });
 
-      // =====================================================
-      // PROJECT VIDEO SCALE
-      // =====================================================
+          // =====================================================
+          // PROJECT CARD REVEAL
+          // =====================================================
 
-      gsap.utils
-        .toArray<HTMLElement>('.project-video')
-        .forEach((video) => {
-          gsap.fromTo(
-            video,
-            {
-              scale: 1.05
-            },
-            {
-              scale: 1,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: video,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1
-              }
+          gsap.utils
+            .toArray<HTMLElement>('.project-card')
+            .forEach((card, index) => {
+              gsap.fromTo(
+                card,
+                {
+                  opacity: 0,
+                  y: 35
+                },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.75,
+                  delay: index * 0.05,
+                  ease: 'power3.out',
+                  scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    once: true
+                  }
+                }
+              );
+            });
+
+          // =====================================================
+          // PROJECT VIDEO SCALE
+          // =====================================================
+
+          gsap.utils
+            .toArray<HTMLElement>('.project-video')
+            .forEach((video) => {
+              gsap.fromTo(
+                video,
+                {
+                  scale: 1.05
+                },
+                {
+                  scale: 1,
+                  ease: 'none',
+                  scrollTrigger: {
+                    trigger: video,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 1
+                  }
+                }
+              );
+            });
+
+          // =====================================================
+          // PROJECT TITLE HOVER
+          // =====================================================
+
+          gsap.utils
+            .toArray<HTMLElement>('.project-card')
+            .forEach((card) => {
+              const title =
+                card.querySelector(
+                  '.project-title'
+                ) as HTMLElement | null;
+
+              if (!title) return;
+
+              const enter = () => {
+                gsap.to(title, {
+                  x: 8,
+                  duration: 0.4,
+                  ease: 'power3.out'
+                });
+              };
+
+              const leave = () => {
+                gsap.to(title, {
+                  x: 0,
+                  duration: 0.45,
+                  ease: 'power3.out'
+                });
+              };
+
+              card.addEventListener(
+                'mouseenter',
+                enter
+              );
+
+              card.addEventListener(
+                'mouseleave',
+                leave
+              );
+            });
+
+          // =====================================================
+          // GENERAL REVEAL
+          // =====================================================
+
+          gsap.utils
+            .toArray<HTMLElement>('.reveal')
+            .forEach((element) => {
+              gsap.fromTo(
+                element,
+                {
+                  opacity: 0,
+                  y: 35
+                },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  scrollTrigger: {
+                    trigger: element,
+                    start: 'top 86%',
+                    once: true
+                  }
+                }
+              );
+            });
+
+          // =====================================================
+          // PROCESS PARALLAX
+          // =====================================================
+
+          gsap.to('.process-word', {
+            xPercent: 8,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '.process-section',
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1
             }
-          );
-        });
+          });
 
-      // =====================================================
-      // PROJECT TITLE HOVER
-      // =====================================================
+          // =====================================================
+          // CLOSING PARALLAX
+          // =====================================================
 
-      gsap.utils
-        .toArray<HTMLElement>('.project-card')
-        .forEach((card) => {
-          const title =
-            card.querySelector(
-              '.project-title'
-            ) as HTMLElement | null;
+          gsap.to('.closing-word', {
+            xPercent: -8,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '.closing-section',
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1
+            }
+          });
 
-          if (!title) return;
-
-          const enter = () => {
-            gsap.to(title, {
-              x: 8,
-              duration: 0.4,
-              ease: 'power3.out'
-            });
-          };
-
-          const leave = () => {
-            gsap.to(title, {
-              x: 0,
-              duration: 0.45,
-              ease: 'power3.out'
-            });
-          };
-
-          card.addEventListener(
-            'mouseenter',
-            enter
-          );
-
-          card.addEventListener(
-            'mouseleave',
-            leave
-          );
-        });
-
-      // =====================================================
-      // GENERAL REVEAL
-      // =====================================================
-
-      gsap.utils
-        .toArray<HTMLElement>('.reveal')
-        .forEach((element) => {
           gsap.fromTo(
-            element,
+            '.closing-content',
             {
               opacity: 0,
               y: 35
@@ -359,103 +615,62 @@
               duration: 0.8,
               ease: 'power3.out',
               scrollTrigger: {
-                trigger: element,
-                start: 'top 86%',
+                trigger: '.closing-content',
+                start: 'top 85%',
                 once: true
               }
             }
           );
+
+          // =====================================================
+          // REFRESH
+          // =====================================================
+
+          window.addEventListener('load', refresh);
+
+          refreshTimeouts.push(
+            window.setTimeout(refresh, 300),
+            window.setTimeout(refresh, 800)
+          );
         });
 
-      // =====================================================
-      // PROCESS WORD
-      // =====================================================
+        cleanup = () => {
+          window.removeEventListener('load', refresh);
 
-      gsap.to('.process-word', {
-        xPercent: 8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.process-section',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1
-        }
+          refreshTimeouts.forEach((timeout) =>
+            window.clearTimeout(timeout)
+          );
+
+          projectMedia.revert();
+          ctx.revert();
+        };
+      })
+      .catch((error) => {
+        console.error(
+          'Failed to initialize project animations:',
+          error
+        );
       });
-
-      // =====================================================
-      // CLOSING WORD
-      // =====================================================
-
-      gsap.to('.closing-word', {
-        xPercent: -8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.closing-section',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1
-        }
-      });
-
-      gsap.fromTo(
-        '.closing-content',
-        {
-          opacity: 0,
-          y: 35
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.closing-content',
-            start: 'top 85%',
-            once: true
-          }
-        }
-      );
-
-      // =====================================================
-      // REFRESH
-      // =====================================================
-
-      const refresh = () =>
-        ScrollTrigger.refresh();
-
-      window.addEventListener(
-        'load',
-        refresh
-      );
-
-      setTimeout(refresh, 300);
-      setTimeout(refresh, 800);
-    });
 
     return () => {
-      window.removeEventListener(
-        'load',
-        ScrollTrigger.refresh
-      );
-
-      ctx.revert();
+      cancelled = true;
+      cleanup?.();
     };
   });
 </script>
 
 <svelte:head>
-  <title>Projects — Rizal Amri Rozaqi</title>
+  <title>Projects</title>
 
   <meta
     name="description"
-    content="Selected motion graphics and visual projects by Rizal Amri Rozaqi."
+    content="Video editing, motion graphics, 3D, and graphic design projects by Rizal Amri Rozaqi."
   />
 </svelte:head>
 
 <main
   class="overflow-hidden text-[#172238] selection:bg-[#18A9E8] selection:text-[#F0F2F4]"
 >
-
   <!-- =======================================================
        01 — INTRO
   ======================================================== -->
@@ -469,9 +684,7 @@
       MOTION
     </div>
 
-    <div
-      class="relative z-10 mx-auto w-full max-w-7xl"
-    >
+    <div class="relative z-10 mx-auto w-full max-w-7xl">
       <div
         class="intro-meta font-mono text-[9px] uppercase tracking-[0.16em] text-[#172238]/45"
       >
@@ -522,14 +735,20 @@
             class="h-2 w-2 rounded-full bg-[#18A9E8]"
           ></span>
 
-          Scroll horizontally →
+          <span class="hidden md:inline">
+            Scroll horizontally →
+          </span>
+
+          <span class="md:hidden">
+            Scroll to explore ↓
+          </span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- =======================================================
-       02 — PROJECTS
+       02 — SELECTED WORK
   ======================================================== -->
 
   <section
@@ -542,14 +761,11 @@
     </div>
 
     <div
-      class="projects-track flex min-h-screen w-max items-center gap-12 px-6 py-24 md:gap-16 md:px-12"
+      class="projects-track flex w-full flex-col items-stretch gap-14 px-6 py-24 md:min-h-screen md:w-max md:flex-row md:items-center md:gap-16 md:px-12"
     >
+      <!-- INTRO CARD -->
 
-      <!-- INTRO -->
-
-      <div
-        class="w-[70vw] shrink-0 md:w-[30vw]"
-      >
+      <div class="w-full shrink-0 md:w-[30vw]">
         <div
           class="font-mono text-[8px] uppercase tracking-[0.15em] text-[#18A9E8]"
         >
@@ -584,14 +800,14 @@
         {/if}
       </div>
 
-      <!-- PROJECTS -->
+      <!-- SELECTED PROJECT CARDS -->
+      <!-- Hanya menampilkan highlighted: true -->
 
-      {#each projects as project}
+      {#each highlightedProjects as project}
         <article
-          class="project-card group flex w-[82vw] shrink-0 flex-col md:w-[44vw]"
+          class="project-card group flex w-full shrink-0 flex-col md:w-[44vw]"
           data-cursor-hover
         >
-
           <!-- VIDEO -->
 
           <div
@@ -646,9 +862,7 @@
                 {project.category}
               </span>
 
-              <span
-                class="font-mono text-[8px] text-white"
-              >
+              <span class="font-mono text-[8px] text-white">
                 {project.year}
               </span>
             </div>
@@ -672,7 +886,6 @@
             class="flex min-h-[170px] items-start justify-between gap-6 md:min-h-[185px]"
           >
             <div class="max-w-lg">
-
               <div
                 class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#18A9E8]"
               >
@@ -690,7 +903,6 @@
               >
                 {project.description[$language]}
               </p>
-
             </div>
 
             <span
@@ -699,15 +911,12 @@
               {project.number}
             </span>
           </div>
-
         </article>
       {/each}
 
-      <!-- END -->
+      <!-- END CARD -->
 
-      <div
-        class="w-[65vw] shrink-0 md:w-[30vw]"
-      >
+      <div class="w-full shrink-0 md:w-[30vw]">
         <div
           class="font-mono text-[8px] uppercase tracking-[0.15em] text-[#18A9E8]"
         >
@@ -723,12 +932,546 @@
           </span>
         </h2>
       </div>
-
     </div>
   </section>
 
   <!-- =======================================================
-       03 — PROCESS
+       03 — ALL PROJECTS
+  ======================================================== -->
+
+  <section
+    class="all-projects-section overflow-hidden bg-[#EEF0F2] px-6 py-24 text-[#172238] md:px-12 md:py-36"
+  >
+    <div class="mx-auto w-full max-w-7xl">
+      <!-- HEADER -->
+
+      <div
+        class="reveal flex flex-col justify-between gap-8 md:flex-row md:items-end"
+      >
+        <div>
+          <div
+            class="font-mono text-[9px] uppercase tracking-[0.15em] text-[#172238]/45"
+          >
+            / 03 — All Projects
+          </div>
+
+          <h2
+            class="mt-6 max-w-3xl font-bebas text-[15vw] leading-[0.78] tracking-[-0.035em] sm:text-[12vw] md:text-[8vw]"
+          >
+            BEYOND THE
+            <span class="text-[#172238]/25">
+              HIGHLIGHTS.
+            </span>
+          </h2>
+        </div>
+
+        <p
+          class="max-w-sm text-sm leading-relaxed text-[#172238]/55"
+        >
+          {#if $language === 'id'}
+            Arsip karya berdasarkan bidang, dari video editing
+            sampai eksplorasi visual dan desain grafis.
+          {:else}
+            A collection of work by discipline, from video
+            editing to visual experiments and graphic design.
+          {/if}
+        </p>
+      </div>
+
+      <!-- =====================================================
+           VIDEO EDITING
+      ====================================================== -->
+
+      <section
+        id="video-editing"
+        class="mt-20 border-t border-[#172238]/15 pt-8 md:mt-28"
+      >
+        <div
+          class="mb-8 flex items-end justify-between gap-4"
+        >
+          <div>
+            <p
+              class="font-mono text-[8px] uppercase tracking-[0.15em] text-[#18A9E8]"
+            >
+              01 / Moving Image
+            </p>
+
+            <h3
+              class="mt-3 font-playfair text-4xl md:text-6xl"
+            >
+              Video Editing
+            </h3>
+          </div>
+
+          <span
+            class="font-mono text-[9px] text-[#172238]/40"
+          >
+            {String(videoEditingProjects.length).padStart(2, '0')}
+            WORKS
+          </span>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {#each videoEditingProjects as project}
+            <article
+              class="archive-project-card reveal group min-w-0"
+            >
+              <div
+                class="relative aspect-video cursor-pointer overflow-hidden rounded-md bg-[#172238]"
+                onclick={handleVideoClick}
+                role="button"
+                tabindex="0"
+                onkeydown={(event) => {
+                  if (
+                    event.key === 'Enter' ||
+                    event.key === ' '
+                  ) {
+                    event.preventDefault();
+                    handleVideoClick(
+                      event as unknown as MouseEvent
+                    );
+                  }
+                }}
+                aria-label={`Toggle sound for ${project.title}`}
+              >
+                <video
+                  src={project.video}
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-label={project.title}
+                  class="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                ></video>
+
+                <span
+                  class="absolute left-4 top-4 font-mono text-[9px] text-[#18A9E8]"
+                >
+                  {project.number}
+                </span>
+
+          </div>
+
+              <div class="mt-4 flex items-start justify-between gap-4">
+                <div>
+                  <p
+                    class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                  >
+                    {project.category} · {project.year}
+                  </p>
+
+                  <h4
+                    class="mt-2 font-playfair text-2xl md:text-3xl"
+                  >
+                    {project.title}
+                  </h4>
+
+                  <p
+                    class="mt-3 max-w-lg text-sm leading-relaxed text-[#172238]/55"
+                  >
+                    {project.description[$language]}
+                  </p>
+                </div>
+
+                <span
+                  class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                >
+                  Click for Sound
+                </span>
+              </div>
+            </article>
+          {/each}
+        </div>
+      </section>
+
+      <!-- =====================================================
+           MOTION GRAPHICS
+      ====================================================== -->
+
+      <section
+        id="motion-graphics"
+        class="mt-20 border-t border-[#172238]/15 pt-8 md:mt-28"
+      >
+        <div
+          class="mb-8 flex items-end justify-between gap-4"
+        >
+          <div>
+            <p
+              class="font-mono text-[8px] uppercase tracking-[0.15em] text-[#18A9E8]"
+            >
+              02 / Design in Motion
+            </p>
+
+            <h3
+              class="mt-3 font-playfair text-4xl md:text-6xl"
+            >
+              Motion Graphics
+            </h3>
+          </div>
+
+          <span
+            class="font-mono text-[9px] text-[#172238]/40"
+          >
+            {String(motionProjects.length).padStart(2, '0')}
+            WORKS
+          </span>
+        </div>
+
+        <div
+          class="grid gap-x-5 gap-y-10 md:grid-cols-2"
+        >
+          {#each motionProjects as project}
+            <article
+              class="archive-project-card reveal group min-w-0"
+            >
+              <div
+                class="relative aspect-video cursor-pointer overflow-hidden rounded-md bg-[#172238]"
+                onclick={handleVideoClick}
+                role="button"
+                tabindex="0"
+                onkeydown={(event) => {
+                  if (
+                    event.key === 'Enter' ||
+                    event.key === ' '
+                  ) {
+                    event.preventDefault();
+                    handleVideoClick(
+                      event as unknown as MouseEvent
+                    );
+                  }
+                }}
+                aria-label={`Toggle sound for ${project.title}`}
+              >
+                <video
+                  src={project.video}
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-label={project.title}
+                  class="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                ></video>
+
+                <span
+                  class="absolute left-4 top-4 font-mono text-[9px] text-[#18A9E8]"
+                >
+                  {project.number}
+                </span>
+
+              </div>
+
+              <div class="mt-4">
+              <div class="flex justify-between gap-2">
+                <p
+                  class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                >
+                  {project.category} · {project.year}
+                </p>
+                <span
+                  class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                >
+                  Click for Sound
+                </span>
+              </div>
+
+                <h4
+                  class="mt-2 font-playfair text-2xl md:text-3xl"
+                >
+                  {project.title}
+                </h4>
+
+                <p
+                  class="mt-3 text-sm leading-relaxed text-[#172238]/55"
+                >
+                  {project.description[$language]}
+                </p>
+              </div>
+            </article>
+          {/each}
+        </div>
+      </section>
+
+      <!-- =====================================================
+           3D
+      ====================================================== -->
+
+      <section
+        id="3d"
+        class="mt-20 border-t border-[#172238]/15 pt-8 md:mt-28"
+      >
+        <div
+          class="mb-8 flex items-end justify-between gap-4"
+        >
+          <div>
+            <p
+              class="font-mono text-[8px] uppercase tracking-[0.15em] text-[#18A9E8]"
+            >
+              03 / Space & Form
+            </p>
+
+            <h3
+              class="mt-3 font-playfair text-4xl md:text-6xl"
+            >
+              3D
+            </h3>
+          </div>
+
+          <span
+            class="font-mono text-[9px] text-[#172238]/40"
+          >
+            {String(threeDProjects.length).padStart(2, '0')}
+            WORKS
+          </span>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {#each threeDProjects as project}
+            <article
+              class="archive-project-card reveal group min-w-0"
+            >
+              <div
+                class="relative aspect-video cursor-pointer overflow-hidden rounded-md bg-[#172238]"
+                onclick={handleVideoClick}
+                role="button"
+                tabindex="0"
+                onkeydown={(event) => {
+                  if (
+                    event.key === 'Enter' ||
+                    event.key === ' '
+                  ) {
+                    event.preventDefault();
+                    handleVideoClick(
+                      event as unknown as MouseEvent
+                    );
+                  }
+                }}
+                aria-label={`Toggle sound for ${project.title}`}
+              >
+                <video
+                  src={project.video}
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-label={project.title}
+                  class="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                ></video>
+
+                <span
+                  class="absolute left-4 top-4 font-mono text-[9px] text-[#18A9E8]"
+                >
+                  {project.number}
+                </span>
+
+              </div>
+
+              <div class="mt-4">
+              <div class="flex justify-between">
+                <p
+                  class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                >
+                  {project.category} · {project.year}
+                </p>
+                                <span
+                  class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                >
+                  Click for Sound
+                </span>
+              </div>  
+
+                <h4
+                  class="mt-2 font-playfair text-2xl md:text-3xl"
+                >
+                  {project.title}
+                </h4>
+
+                <p
+                  class="mt-3 max-w-lg text-sm leading-relaxed text-[#172238]/55"
+                >
+                  {project.description[$language]}
+                </p>
+              </div>
+            </article>
+          {/each}
+        </div>
+      </section>
+
+      <!-- =====================================================
+           GRAPHIC DESIGN
+           Setiap project mempunyai carousel sendiri.
+      ====================================================== -->
+
+      <section
+        id="graphic-design"
+        class="mt-20 border-t border-[#172238]/15 pt-8 md:mt-28"
+      >
+        <!-- HEADER -->
+
+        <div
+          class="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"
+        >
+          <div>
+            <p
+              class="font-mono text-[8px] uppercase tracking-[0.15em] text-[#18A9E8]"
+            >
+              04 / Static Visuals
+            </p>
+
+            <h3
+              class="mt-3 font-playfair text-4xl md:text-6xl"
+            >
+              Graphic Design
+            </h3>
+          </div>
+
+          <p
+            class="max-w-xs text-sm leading-relaxed text-[#172238]/50"
+          >
+            A collection of visual experiments, ideas,
+            and design explorations.
+          </p>
+        </div>
+
+        <!-- PROJECT LIST -->
+
+        <div class="space-y-16 md:space-y-24">
+          {#each graphicDesignProjects as project}
+            <article class="graphic-project reveal min-w-0">
+              <!-- PROJECT INFORMATION -->
+
+              <div
+                class="mb-6 flex items-start justify-between gap-4"
+              >
+                <div>
+                  <p
+                    class="font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/45"
+                  >
+                    {project.number} / {project.category} · {project.year}
+                  </p>
+
+                  <h4
+                    class="mt-3 font-playfair text-3xl md:text-4xl"
+                  >
+                    {project.title}
+                  </h4>
+
+                  <p
+                    class="mt-3 max-w-lg text-sm leading-relaxed text-[#172238]/55"
+                  >
+                    {project.description[$language]}
+                  </p>
+                </div>
+
+                <span
+                  class="shrink-0 font-mono text-[9px] text-[#172238]/40"
+                >
+                  {String(project.images.length).padStart(2, '0')}
+                  VISUALS
+                </span>
+              </div>
+
+              <!-- INDIVIDUAL PROJECT CAROUSEL -->
+
+              <div
+                class="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-4 scroll-smooth sm:mx-0 sm:gap-5 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                aria-label={`${project.title} gallery`}
+              >
+                {#each project.images as image, imageIndex}
+                  <figure
+                    class="group w-[78%] shrink-0 snap-start sm:w-[44%] lg:w-[31.5%]"
+                  >
+                    <div
+                      class="relative aspect-[4/5] overflow-hidden rounded-md bg-[#D9E0E8]"
+                    >
+                      {#if image.src}
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          loading="lazy"
+                          class="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+                        />
+                      {:else}
+                        <!-- PLACEHOLDER UNTUK GAMBAR -->
+
+                        <div
+                          class="flex h-full flex-col justify-between bg-[linear-gradient(145deg,#D9E0E8_0%,#BAC6D4_48%,#8799AF_100%)] p-5 sm:p-7"
+                        >
+                          <div
+                            class="flex items-start justify-between gap-3 font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/60"
+                          >
+                            <span>{project.category}</span>
+
+                            <span>
+                              {String(imageIndex + 1).padStart(2, '0')}
+                            </span>
+                          </div>
+
+                          <div>
+                            <p
+                              class="font-bebas text-[22vw] leading-[0.72] tracking-[-0.04em] text-[#172238]/15 sm:text-[11vw] lg:text-[7vw]"
+                            >
+                              {project.number}
+                            </p>
+
+                            <h5
+                              class="mt-5 max-w-[10ch] font-playfair text-3xl leading-[0.95] text-[#172238] sm:text-4xl"
+                            >
+                              {project.title}
+                            </h5>
+                          </div>
+
+                          <div
+                            class="flex items-end justify-between gap-3 border-t border-[#172238]/20 pt-3 font-mono text-[8px] uppercase tracking-[0.1em] text-[#172238]/60"
+                          >
+                            <span>{project.category}</span>
+
+                            <span>
+                              {String(imageIndex + 1).padStart(2, '0')}
+                              /
+                              {String(project.images.length).padStart(2, '0')}
+                            </span>
+                          </div>
+                        </div>
+                      {/if}
+                    </div>
+
+                    <figcaption
+                      class="mt-3 flex items-center justify-between gap-3"
+                    >
+                      <span class="text-xs text-[#172238]/60">
+                        {image.alt}
+                      </span>
+
+                      <span
+                        class="shrink-0 font-mono text-[8px] uppercase tracking-[0.1em] text-[#172238]/35"
+                      >
+                        {String(imageIndex + 1).padStart(2, '0')}
+                      </span>
+                    </figcaption>
+                  </figure>
+                {/each}
+              </div>
+
+              <!-- CAROUSEL HINT -->
+
+              <div
+                class="mt-2 flex items-center justify-between font-mono text-[8px] uppercase tracking-[0.12em] text-[#172238]/35"
+              >
+                <span>Explore the collection</span>
+                <span aria-hidden="true">Swipe →</span>
+              </div>
+            </article>
+          {/each}
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       04 — PROCESS
   ======================================================== -->
 
   <section
@@ -740,19 +1483,15 @@
       PROCESS
     </div>
 
-    <div
-      class="relative z-10 mx-auto max-w-7xl"
-    >
-      <div
-        class="grid gap-16 md:grid-cols-[0.7fr_1.3fr]"
-      >
+    <div class="relative z-10 mx-auto max-w-7xl">
+      <div class="grid gap-16 md:grid-cols-[0.7fr_1.3fr]">
+        <!-- INTRO -->
 
         <div class="reveal">
-
           <div
             class="font-mono text-[9px] uppercase tracking-[0.15em] text-[#172238]/45"
           >
-            / 03 — Process
+            / 04 — Process
           </div>
 
           <h2
@@ -779,24 +1518,19 @@
               and see where it leads.
             </p>
           {/if}
-
         </div>
 
-        <div
-          class="grid gap-10 md:grid-cols-3"
-        >
+        <!-- PROCESS STEPS -->
 
+        <div class="grid gap-10 md:grid-cols-3">
           <div class="reveal">
-
             <span
               class="font-mono text-[9px] text-[#172238]/40"
             >
               01
             </span>
 
-            <h3
-              class="mt-4 font-playfair text-3xl"
-            >
+            <h3 class="mt-4 font-playfair text-3xl">
               Explore
             </h3>
 
@@ -815,20 +1549,16 @@
                 understand what I actually want to make.
               </p>
             {/if}
-
           </div>
 
           <div class="reveal">
-
             <span
               class="font-mono text-[9px] text-[#172238]/40"
             >
               02
             </span>
 
-            <h3
-              class="mt-4 font-playfair text-3xl"
-            >
+            <h3 class="mt-4 font-playfair text-3xl">
               Build
             </h3>
 
@@ -847,20 +1577,16 @@
                 find an approach that feels right.
               </p>
             {/if}
-
           </div>
 
           <div class="reveal">
-
             <span
               class="font-mono text-[9px] text-[#172238]/40"
             >
               03
             </span>
 
-            <h3
-              class="mt-4 font-playfair text-3xl"
-            >
+            <h3 class="mt-4 font-playfair text-3xl">
               Learn
             </h3>
 
@@ -881,16 +1607,14 @@
                 wrong.
               </p>
             {/if}
-
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
   <!-- =======================================================
-       04 — CLOSING PHRASE
+       05 — CLOSING PHRASE
   ======================================================== -->
 
   <section
@@ -905,15 +1629,13 @@
     <div
       class="closing-content relative z-10 mx-auto w-full max-w-7xl"
     >
-
       <div
         class="font-mono text-[9px] uppercase tracking-[0.15em] text-[#172238]/40"
       >
-        / 04 — Until next time
+        / 05 — Until next time
       </div>
 
       <div class="mt-12">
-
         <h2
           class="font-serif text-[8vw] leading-[0.95] tracking-[-0.025em] md:text-[7vw]"
         >
@@ -925,7 +1647,6 @@
         >
           EVEN BENEATH THE SNOW, PASSION BURNS.
         </p>
-
       </div>
 
       <div
@@ -937,8 +1658,6 @@
 
         More to come
       </div>
-
     </div>
   </section>
-
 </main>
